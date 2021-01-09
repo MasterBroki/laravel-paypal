@@ -18,6 +18,7 @@ trait MockResponsePayloads
     use Mocks\Responses\Subscriptions;
     use Mocks\Responses\Trackers;
     use Mocks\Responses\WebHooks;
+    use Mocks\Responses\Orders;
 
     /**
      * @return array

@@ -1465,4 +1465,24 @@ class AdapterFeatureTest extends TestCase
         $this->assertNotEmpty($response);
         $this->assertArrayHasKey('verification_status', $response);
     }
+    
+    /** @test */
+    public function it_should_show_order()
+    {
+        $this->client->setAccessToken([
+            'access_token'  => self::$access_token,
+            'token_type'    => 'Bearer',
+        ]);
+        
+        $this->client->setClient(
+            $this->mock_http_client(
+                $this->mockGenerateShowOrderResponse()
+            )
+        );
+        
+        $response = $this->client->generateInvoiceNumber();
+        
+        $this->assertNotEmpty($response);
+        $this->assertArrayHasKey('invoice_number', $response);
+    }
 }
