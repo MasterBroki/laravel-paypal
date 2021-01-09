@@ -28,14 +28,14 @@ trait PayPalHttpClient
      *
      * @var string
      */
-    private $apiUrl;
+    protected $apiUrl;
 
     /**
      * PayPal API Endpoint.
      *
      * @var string
      */
-    private $apiEndPoint;
+    protected $apiEndPoint;
 
     /**
      * IPN notification url for PayPal.
@@ -189,7 +189,7 @@ trait PayPalHttpClient
      *
      * @return array|StreamInterface|string
      */
-    private function doPayPalRequest($decode = true)
+    protected function doPayPalRequest($decode = true)
     {
         try {
             // Perform PayPal HTTP API request.
